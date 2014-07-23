@@ -1,11 +1,12 @@
 {% extends "demo/base.html" %}
 {% load demo_tags %}
-
+{% load i18n_model %}
 
 {% block content %}
     {% include "demo/includes/carousel.html" with carousel_items=self.carousel_items.all only %}
 
-    {% include "demo/includes/body.html" with body=self.body only %}
+    {% translate self as self_translation %}
+    {% include "demo/includes/body.html" with body=self_translation.body only %}
 
     {% person_listing_homepage %}
 

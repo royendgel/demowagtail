@@ -167,6 +167,8 @@ INSTALLED_APPS = (
     'wagtail.wagtailforms',
 
     'demo',
+    'translations',
+    'i18n_model',
 )
 
 EMAIL_SUBJECT_PREFIX = '[wagtaildemo] '
