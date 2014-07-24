@@ -2,6 +2,8 @@
 
 import os
 
+from django.utils.translation import ugettext_lazy as _
+
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..', '..')
 
 DEBUG = True
@@ -44,7 +46,13 @@ TIME_ZONE = 'Europe/London'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-gb'
+LANGUAGE_CODE = 'en'
+
+LANGUAGES = (
+    ('es', _('Spanish')),
+    ('en', _('English')),
+)
+
 
 SITE_ID = 1
 
@@ -111,8 +119,9 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
