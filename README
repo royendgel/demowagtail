@@ -1,5 +1,5 @@
-pip install -r requirements/dev.txt 
+pip install -r requirements/dev.txt
 python manage.py syncdb --noinput
-python manage.py migrate --noinitialdata
+python manage.py migrate --no-initial-data
 python manage.py createsuperuser
 python manage.py runserver
